@@ -122,6 +122,17 @@ class VoucherQuery
     }
 
     /**
+     * Get status information for a voucher
+     *
+     * @param string $uuid Voucher UUID
+     * @return StatusQuery
+     */
+    public function status(string $uuid): StatusQuery
+    {
+        return new StatusQuery($this->httpClient, $uuid);
+    }
+
+    /**
      * Get series list
      *
      * @return SeriesQuery
